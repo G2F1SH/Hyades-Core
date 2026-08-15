@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "hyades-core",
+	"version": "${version}",
+	"name": "Hyades Core",
+	"description": "Hyades Core - a client-side framework providing a module system, HUD elements, ClickGUI and rendering APIs for other Fabric mods.",
+	"authors": [
+		"G2F1SH"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "LGPL-3.0-or-later",
+	"icon": "assets/hyades-core/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.hyades.HyadesCore"
+		],
+		"client": [
+			"com.hyades.client.HyadesCoreClient"
+		]
+	},
+	"mixins": [
+		"hyades-core.mixins.json",
+		{
+			"config": "hyades-core.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

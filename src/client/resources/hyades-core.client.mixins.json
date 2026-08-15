@@ -1,0 +1,15 @@
+{
+	"required": true,
+	"package": "com.hyades.client.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"ExampleClientMixin",
+		"HudRenderMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
