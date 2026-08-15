@@ -13,17 +13,13 @@
 	},
 	"license": "LGPL-3.0-or-later",
 	"icon": "assets/hyades-core/icon.png",
-	"environment": "*",
+	"environment": "client",
 	"entrypoints": {
-		"main": [
-			"com.hyades.HyadesCore"
-		],
 		"client": [
 			"com.hyades.client.HyadesCoreClient"
 		]
 	},
 	"mixins": [
-		"hyades-core.mixins.json",
 		{
 			"config": "hyades-core.client.mixins.json",
 			"environment": "client"

@@ -4,11 +4,16 @@ import com.hyades.client.api.HyadesCoreAPI;
 import com.hyades.client.api.HyadesCoreClientExtension;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 客户端入口：加载外部 {@link HyadesCoreClientExtension}，由消费方模组自行注册模块与 HUD。
  */
 public class HyadesCoreClient implements ClientModInitializer {
+
+	public static final String MOD_ID = "hyades-core";
+	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	@Override
 	public void onInitializeClient() {
