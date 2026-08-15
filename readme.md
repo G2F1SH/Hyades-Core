@@ -237,7 +237,9 @@ api.registerHudElement(new MyHudElement(), "MyHud");
 `HudElement` 常用成员：`getX()/getY()`、`setPosition(x, y)`、`isVisible()/setVisible(b)`、
 `contains(px, py)`（命中测试）、`render(ctx, mouseX, mouseY, deltaTicks)`。
 
-玩家在游戏中按 **End** 进入 HUD 编辑模式后，可直接拖拽已启用的 HUD 元素。
+进入 HUD 编辑模式后可直接拖拽已启用的 HUD 元素。**框架不绑定任何默认按键**——调用
+`api.toggleHudDragMode()` / `api.openClickGui()` 打开编辑模式与 ClickGUI 的时机由消费方模组自行决定
+（例如注册自己的 `KeyMapping` 或加入设置界面）。
 
 ### 绘制 API：`DrawContext`（类 Android Canvas）
 
@@ -265,12 +267,8 @@ ctx.clip(0, 0, 100, 100); /* … */ ctx.popClip();                          // �
 
 ## 5. 内置功能参考
 
-| 功能 | 说明 |
-|---|---|
-| ClickGUI | 默认 **Right Shift** 打开，按分类列出模块与设置 |
-| HUD 编辑模式 | 默认 **End** 切换，开启后可拖拽 HUD 元素 |
-| 内置模块 | `Sprint`、`Speed`、`NoFall`、`Fullbright` |
-| 内置 HUD | `Watermark`、`ModuleList`、`KeyBinds`、`Target` |
+Hyades Core 作为纯前置框架，**不内置任何模块或 HUD 元素**。ClickGUI 与 HUD 编辑模式由框架提供，
+但打开它们的入口（`api.openClickGui()` / `api.toggleHudDragMode()`）需要消费方模组自行绑定，框架不注册默认按键。
 
 ---
 
